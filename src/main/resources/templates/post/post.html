@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${post.title}">Post</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<header>
+    <h1 th:text="${post.title}">Post Title</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/new">New Post</a>
+    </nav>
+</header>
+<main>
+    <article>
+        <p th:text="${post.content}">Post Content</p>
+        <small>Written by <span th:text="${post.author}">Author</span> on <span th:text="${post.createdAt}">Date</span></small>
+    </article>
+    <a href="/">Back to Home</a>
+</main>
+<footer>
+    <p>&copy; 2024 My Blog</p>
+</footer>
+</body>
+</html>

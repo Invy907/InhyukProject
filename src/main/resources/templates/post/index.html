@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>My Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<header>
+    <h1>Welcome to My Blog</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/index/new">New Post</a>
+    </nav>
+</header>
+<div th:if="${msg}" class="alert alert-success">
+    <p th:text="${msg}"></p>
+</div>
+<main>
+    <h2>Posts</h2>
+    <ul>
+        <li th:each="post : ${posts}">
+            <a th:text="${post.title}" th:href="@{/index/{id}(id=${post.id})}"></a>
+        </li>
+    </ul>
+</main>
+<footer>
+    <p>&copy; 2024 My Blog</p>
+</footer>
+</body>
+</html>
